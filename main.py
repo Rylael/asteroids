@@ -46,6 +46,12 @@ def main():
         for obj in drawable:
             obj.draw(screen)
 
+        for obj in asteroids:
+            for shot in shots:
+                if obj.collision(shot):
+                    obj.kill()
+                    shot.kill()
+
         pygame.display.flip()
 
         # limit the framerate to 60 FPS
