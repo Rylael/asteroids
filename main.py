@@ -3,6 +3,7 @@
 # throughout this file
 import pygame
 import sys
+import random
 from constants import *
 from player import Player
 from asteroid import Asteroid
@@ -49,7 +50,7 @@ def main():
         for obj in asteroids:
             for shot in shots:
                 if obj.collision(shot):
-                    obj.kill()
+                    obj.split()
                     shot.kill()
 
         pygame.display.flip()
